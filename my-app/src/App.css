@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.login-form {
+  border: 2px solid #dee2e6;
+  width: 30%;
+  margin: auto;
+  height: 25rem;
+}
+.logo {
+  width: 100px;
+}
+
+.forgetPassword {
+  display: block;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}

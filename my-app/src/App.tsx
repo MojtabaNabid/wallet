@@ -1,24 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import logo from './assets/imgages/wallet-logo.jpg'
+import { Row, Col, Container } from 'react-bootstrap';
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container fluid className="vh-100">
+        <Row className='h-100 d-flex align-items-center justify-content-center '>
+          <Col>
+            <Form className='login-form p-4 shadow'>
+              <img src={logo} className='logo' alt="logo" />
+              <Form.Group className="mb-4" controlId="formBasicEmail">
+                <FloatingLabel controlId='floatingUsername' label="Username" className='mb-3'>
+                  <Form.Control type="email" placeholder="Username or Eamil address" />
+                </FloatingLabel>
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <FloatingLabel controlId='floatingPassword' label="Password" className='mb-3'>
+                  <Form.Control type="password" placeholder="Password" />
+                </FloatingLabel>
+              </Form.Group>
+
+              <a className='forgetPassword mb-3'>Forget Password?</a>
+
+              <Button variant="primary" className='w-100 mt-3' type="submit">
+                Sing in
+              </Button>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
