@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
@@ -18,6 +18,17 @@ function Login() {
     function handleSumbit(e) {
         e.preventDefault();
         console.log(formData);
+        axios({
+            method: 'post',
+            url: 'http://localhost:5005/api/Identity/Authentication/Login',
+            data: {
+              username: formData.username,
+              password: formData.password,
+              businessId: 1
+            }
+          }).then(function (response) {
+            console.log(response);
+          });
     }
 
     return (
@@ -29,7 +40,7 @@ function Login() {
                   <img src={logo} className='logo' alt="logo" />
                   <Form.Group className="mb-4" controlId="formBasicEmail">
                     <FloatingLabel controlId='floatingUsername' label="Username" className='mb-3'>
-                      <Form.Control type="email" 
+                      <Form.Control type="text" 
                                     placeholder="Username or Eamil address" 
                                     onChange={e => setformData({...formData, username: e.target.value})}/>
                     </FloatingLabel>
