@@ -31,8 +31,12 @@ function Login() {
             }
           })
           .then(function (response) {
-            console.log(response);
+            // console.log(response);
+            const token = response.data.data; 
+            localStorage.setItem("userLoginToken", token)
+            // console.log(localStorage.getItem("userLoginToken"))
             navigate("/Confirmation_Login");
+
           })
           .catch(function (error) {
             console.log(error);
