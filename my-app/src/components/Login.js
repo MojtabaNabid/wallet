@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -7,9 +9,10 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import logo from '../assets/imgages/wallet-logo.jpg'
 import { Row, Col, Container } from 'react-bootstrap';
+import Confirmation_Login from "./Confirmation_Login";
 
 function Login() {
-
+    const navigate = useNavigate();
     const [formData, setformData] = useState({
         username: "",
         password: ""
@@ -17,7 +20,7 @@ function Login() {
 
     function handleSumbit(e) {
         e.preventDefault();
-        console.log(formData);
+        // console.log(formData);
         axios({
             method: 'post',
             url: 'http://localhost:5005/api/Identity/Authentication/Login',
@@ -26,8 +29,14 @@ function Login() {
               password: formData.password,
               businessId: 1
             }
-          }).then(function (response) {
+          })
+          .then(function (response) {
             console.log(response);
+            navigate("/Confirmation_Login");
+          })
+          .catch(function (error) {
+            console.log(error);
+            alert("Please write your info correctly")
           });
     }
 
