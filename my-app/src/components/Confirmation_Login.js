@@ -4,12 +4,18 @@ import Alert from 'react-bootstrap/Alert';
 import { Row, Col, Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Confirmation_Login() {
+
+    function callSettingAPI() {
+        
+    }
+
     return (
         <div>
             <Link to="/">
-                Home page
+                <Button variant="primary" className="m-4">Home page</Button>
             </Link>
             <Container fluid className="vh-100">
                 <Row className='h-50'>
@@ -21,7 +27,7 @@ function Confirmation_Login() {
                 </Row>
                 <Row>
                     <Col className="d-flex align-items-center justify-content-center">
-                        <Button variant="primary">Call Setting API</Button>
+                        <Button variant="dark" onClick={callSettingAPI}>Call Setting API</Button>
                     </Col>
                 </Row>
             </Container>
