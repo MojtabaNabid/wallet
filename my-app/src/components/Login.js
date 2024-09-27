@@ -31,8 +31,8 @@ function Login() {
             }
           })
           .then(function (response) {
-            // console.log(response);
-            const token = response.data.data; 
+            console.log(response);
+            const token = response.data.data.token; 
             localStorage.setItem("userLoginToken", token)
             // console.log(localStorage.getItem("userLoginToken"))
             navigate("/Confirmation_Login");

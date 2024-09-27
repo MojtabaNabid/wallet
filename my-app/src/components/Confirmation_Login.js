@@ -9,7 +9,20 @@ import axios from "axios";
 function Confirmation_Login() {
 
     function callSettingAPI() {
-        
+        const token = localStorage.getItem("userLoginToken");
+        console.log("JWT Token: ", token) // check if token exists
+        const config = {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        };
+        axios.get('http://localhost:5005/api/Identity/Settings', config)
+        .then((response) => {
+            console.log(response.data); // Handle the data from the response
+          })
+        .catch((err) => {
+        console.log(err.message); // Handle any errors
+        });  
     }
 
     return (
