@@ -1,7 +1,16 @@
+import logo from '../assets/imgages/logo-bg-white-1.jpg'
+
 function Nav() {
 return (
     <>
-        <img src="../assets/image/logo-bg-white-1.jpg" alt="My Wallet Logo" />
+        <nav>
+            <img src={logo} alt="My Wallet Logo" className='logo' />
+            <p className='nav-elements'>|</p>
+            <div className='nav-elements nav-welcome'>
+                <p>Hello Mojtaba</p>
+                <p>Welcome to your Wallet</p>
+            </div>
+        </nav>
     </>
 )
 }
