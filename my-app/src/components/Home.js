@@ -11,14 +11,14 @@ function Home() {
     return (
         <div>
             <Nav />
-            <h1>
+            {/* <h1>
                 Welcome to my <i>WALLET</i>
-            </h1>
-            <Link to='/Login'>
+            </h1> */}
+            {/* <Link to='/Login'>
                 <Button variant="primary" className=' m-3' type="submit">
                         Login
                 </Button>
-            </Link>
+            </Link> */}
         </div>
     )
 }

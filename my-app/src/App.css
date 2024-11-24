@@ -1,11 +1,12 @@
 
 nav {
   /* padding: 0 1rem; */
-  background-color: lightblue;
+  /* background-color: lightblue; */
   height: 100px;
+  text-align: center;
 }
 .logo {
-  width: 90px;
+  width: 100px;
   /* margin-top: 0; */
 }
 
@@ -15,8 +16,47 @@ nav {
   /* padding: 0; */
 }
 
+.divider {
+  font-size: 2.7rem;
+  vertical-align: middle;
+  font-weight: 100;
+  color: #797979;
+}
+
 .nav-welcome {
-  padding: 0;
+  /* padding: 0; */
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: max-content;
+}
+.nav-welcome p:first-child {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.nav-welcome p:nth-child(2) {
+  font-size: 0.8rem;
+  color: #3d3d3d;
+}
+.search-box {
+  display: inline-block;
+  border: 1px solid #ddd;
+  width: 250px;
+  height: 30px;
+  border-radius: 5px;
+  margin-left: 3rem;
+}
+.search-input {
+  border: 0;
+  width: 225px;
+  
+}
+.search-icon {
+  width: 20px;
+  padding-left: 1px;
 }
 
 .App-header {
@@ -29,11 +69,6 @@ nav {
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-
-
-
-
 
 .login-form {
   border: 2px solid #dee2e6;
