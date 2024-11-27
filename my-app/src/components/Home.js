@@ -1,4 +1,5 @@
-import Nav from './Nav'
+import Nav from './Nav';
+import Menu from './Menu';
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
@@ -9,10 +10,10 @@ function Home() {
     const navigate = useNavigate();
 
     return (
-        <div>
-            <Nav />
-            
-        </div>
+            <>
+                <Nav />
+                <Menu />
+            </>
     )
 }
 

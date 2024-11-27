@@ -9,25 +9,27 @@ function Nav() {
 return (
     <>
         <nav>
-            <div className='nav-container'>
+            <div className='container'>
                 <img src={logo} alt="My Wallet Logo" className='logo' />
                 <p className='nav-elements divider'>|</p>
                 <div className='nav-elements nav-welcome'>
                     <p>Hello Mojtaba</p>
                     <p>Welcome to your Wallet</p>
                 </div>
-                <div className='search-box nav-elements'>
+                <div className='search-box'>
                     <img src={searchIcon} width={20} className='search-icon'/>
                     <input type='text' name='search' className='search-input'/>
                 </div>
                 <img src={helpicon} className='nav-elements nav-icons'/>
                 <img src={notificationIcon} className='nav-elements nav-icons'/>
                 <p className='nav-elements divider'>|</p>
-                <Link to='/Login'>
-                    <Button variant="primary" className='m-3 nav-elements log-reg' type="submit">
-                            Login / Register
-                    </Button>
-                </Link>
+                <div className='nav-elements log-reg'>
+                    <Link to='/Login'>
+                        <Button variant="primary" className='m-3 ' type="submit">
+                                Login / Register
+                        </Button>
+                    </Link>
+                </div>
             </div>
         </nav>
     </>
